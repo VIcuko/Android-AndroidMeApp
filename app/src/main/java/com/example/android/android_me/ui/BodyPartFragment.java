@@ -30,8 +30,9 @@ import java.util.List;
 
 public class BodyPartFragment extends Fragment {
 
-    // TODO (3) Create final Strings to store state information about the list of images and list index
-
+    // TODO (3) Create final Strings to store state information about the list of images and list index - Done
+    public static final String IMAGE_ID_LIST = "image_ids";
+    public static final String LIST_INDEX = "list_index";
     // Tag for logging
     private static final String TAG = "BodyPartFragment";
 
