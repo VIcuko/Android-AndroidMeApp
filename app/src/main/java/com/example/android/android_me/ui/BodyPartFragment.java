@@ -66,7 +66,7 @@ public class BodyPartFragment extends Fragment {
             Log.v(TAG, "This fragment has a null list of image id's");
         }
 
-        // TODO (3) If a list of image ids exists, set the image resource to the correct item in that list
+        // TODO (3) If a list of image ids exists, set the image resource to the correct item in that list - Done
         // Otherwise, create a Log statement that indicates that the list was not found
 
         // Return the rootView
