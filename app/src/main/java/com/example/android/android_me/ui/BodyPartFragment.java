@@ -98,5 +98,11 @@ public class BodyPartFragment extends Fragment {
         mListIndex = index;
     }
 
-    // TODO (4) Override onSaveInstanceState and save the current state of this fragment
+    // TODO (4) Override onSaveInstanceState and save the current state of this fragment - Done
+
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
 }
