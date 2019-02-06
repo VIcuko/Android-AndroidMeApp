@@ -29,7 +29,7 @@ public class AndroidMeActivity extends AppCompatActivity {
     // TODO (1) Create a fragment_master_list.xml layout file to display all our images; this should be a GridView - Done
 
     // After creating the fragment..
-    // TODO (4) Create a new Activity named MainActivity and a corresponding layout file that displays a MasterListFragment
+    // TODO (4) Create a new Activity named MainActivity and a corresponding layout file that displays a MasterListFragment - Done
         // Remember, to display a static fragment in a layout file, use the <fragment> tag
 
 
