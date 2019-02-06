@@ -30,9 +30,7 @@ public class AndroidMeActivity extends AppCompatActivity {
     // TODO (2) Create a new class called BodyPartFragment to display an image of an Android-Me body part
         // In this class, you'll need to implement an empty constructor and the onCreateView method
         // TODO (3) Show the first image in the list of head images
-            // Soon, you'll update this image display code to show any image you want
-
-
+        // Soon, you'll update this image display code to show any image you want
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
