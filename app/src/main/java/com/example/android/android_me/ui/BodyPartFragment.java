@@ -14,9 +14,9 @@ import com.example.android.android_me.data.AndroidImageAssets;
 /**
  * Created by Vicuko on 6/2/19.
  */
-// TODO (2) Create a new class called BodyPartFragment to display an image of an Android-Me body part
+// TODO (2) Create a new class called BodyPartFragment to display an image of an Android-Me body part - Done
 // In this class, you'll need to implement an empty constructor and the onCreateView method
-// TODO (3) Show the first image in the list of head images
+// TODO (3) Show the first image in the list of head images - Done
 // Soon, you'll update this image display code to show any image you want
 
 public class BodyPartFragment extends Fragment {
