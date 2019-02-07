@@ -22,6 +22,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.example.android.android_me.R;
@@ -43,7 +44,7 @@ public class MasterListFragment extends Fragment {
         void onImageSelected (int position);
     }
 
-    // TODO (2) Override onAttach to make sure that the container activity has implemented the callback
+    // TODO (2) Override onAttach to make sure that the container activity has implemented the callback - Done
 
 
     @Override
@@ -80,8 +81,14 @@ public class MasterListFragment extends Fragment {
         // Set the adapter on the GridView
         gridView.setAdapter(mAdapter);
 
-        // TODO (3) Set a click listener on the gridView and trigger the callback onImageSelected when an item is clicked
-
+        // TODO (3) Set a click listener on the gridView and trigger the callback onImageSelected when an item is clicked - Done
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Trigger the callback method and pass in the position that was clicked
+                mCallback.onImageSelected(position);
+            }
+        });
         // Return the root view
         return rootView;
     }
