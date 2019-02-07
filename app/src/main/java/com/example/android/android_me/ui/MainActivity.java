@@ -18,12 +18,15 @@ package com.example.android.android_me.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.Toast;
 
 import com.example.android.android_me.R;
+import com.example.android.android_me.data.AndroidImageAssets;
 
 // This activity is responsible for displaying the master list of all images
 // Implement the MasterListFragment callback, OnImageClickListener
@@ -35,8 +38,9 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
     private int bodyIndex;
     private int legIndex;
 
-    // TODO (3) Create a variable to track whether to display a two-pane or single-pane UI
+    // TODO (3) Create a variable to track whether to display a two-pane or single-pane UI - Done
         // A single-pane display refers to phone screens, and two-pane to larger tablet screens
+    private boolean mTwoPane;
 
 
     @Override
@@ -44,8 +48,43 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // TODO (4) If you are making a two-pane display, add new BodyPartFragments to create an initial Android-Me image
+        // TODO (4) If you are making a two-pane display, add new BodyPartFragments to create an initial Android-Me image - Done
         // Also, for the two-pane display, get rid of the "Next" button in the master list fragment
+        if (findViewById(R.id.android_me_linear_layout) != null){
+            mTwoPane = true;
+
+            // Only create new fragments when there is no previously saved state
+            if(savedInstanceState == null) {
+
+                Button nextButton = (Button) findViewById(R.id.next_button);
+                nextButton.setVisibility(View.GONE);
+
+//                Change the Gridview to space out the items
+                GridView gridView = (GridView) findViewById(R.id.images_grid_view);
+                gridView.setNumColumns(2);
+
+                FragmentManager fragmentManager = getSupportFragmentManager();
+
+                BodyPartFragment headFragment = new BodyPartFragment();
+                headFragment.setImageIds(AndroidImageAssets.getHeads());
+                fragmentManager.beginTransaction()
+                        .add(R.id.head_container, headFragment)
+                        .commit();
+
+                BodyPartFragment bodyFragment = new BodyPartFragment();
+                bodyFragment.setImageIds(AndroidImageAssets.getBodies());
+                fragmentManager.beginTransaction()
+                        .add(R.id.body_container, bodyFragment)
+                        .commit();
+
+                BodyPartFragment legFragment = new BodyPartFragment();
+                legFragment.setImageIds(AndroidImageAssets.getLegs());
+                fragmentManager.beginTransaction()
+                        .add(R.id.leg_container, legFragment)
+                        .commit();
+            }
+
+        }
 
     }
 
