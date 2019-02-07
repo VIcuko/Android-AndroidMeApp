@@ -49,6 +49,14 @@ public class MasterListFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+//        This makes sure the host activity has implemented the callback interface
+//        If not, it throws an execption
+        try {
+            mCallback = (OnImageClick) context;
+        }catch (ClassCastException e){
+            throw new ClassCastException(context.toString()
+            + "must implement onImageClick listener");
+        }
     }
 
     // Mandatory empty constructor
