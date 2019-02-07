@@ -16,6 +16,7 @@
 
 package com.example.android.android_me.ui;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -44,6 +45,11 @@ public class MasterListFragment extends Fragment {
 
     // TODO (2) Override onAttach to make sure that the container activity has implemented the callback
 
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+    }
 
     // Mandatory empty constructor
     public MasterListFragment() {
