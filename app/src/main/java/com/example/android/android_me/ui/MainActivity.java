@@ -38,6 +38,4 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
 //Create a toast that indicates the position that was clicked
         Toast.makeText(this, "Position clicked = " + position, Toast.LENGTH_SHORT).show();
     }
-    
-
 }
