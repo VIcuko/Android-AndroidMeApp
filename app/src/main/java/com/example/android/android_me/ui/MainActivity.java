@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
                 break;
 
         }
+
         // TODO (3) Put this information in a Bundle and attach it to an Intent that will launch an AndroidMeActivity - Done
         Bundle b = new Bundle();
         b.putInt("headIndex", headIndex);
